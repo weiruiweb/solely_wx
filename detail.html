@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>纯粹科技</title>
+<!-- custom-theme -->
+<meta name="baidu-site-verification" content="z8EeuYl0nS" />
+<meta name="keywords" content="纯粹科技">
+<meta name="description" content="西安纯粹云科技">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+<!-- //custom-theme -->
+<link href="css/basic.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/responsive.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/hover.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/animate.css" rel="stylesheet" type="text/css" media="all" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<script src="js/rem.js"></script>
+<script src="js/browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/base.js" type="application/javascript"></script>
+<style> 
+
+</style>
+</head>
+<body style="background:#fff;">
+<div id="app">
+<header>
+        <div class="navigation fixed-top">
+          <div class="navigation_box contain">
+             <div class="navigation_left">
+                 <a href="index.html"><img src="images/logo.jpg" class="img-responsive"></a>
+             </div>
+             <div class="nav_toggle hidden-this" @click="toggleMenu">
+                 <img src="images/nav.png" />
+             </div>
+             <div class="navigation_right" id="computer">
+                 <ul class="navigate">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="case.html" class="active">行业案例</a></li>
+                    <li><a href="customize.html">小程序定制</a></li>
+                    <li><a href="agent.html">加盟代理</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+             </div>
+             <div class="navigation_right orgin" :class="(is_toggle?'after':'')" id="phone_nav">
+                 <ul class="navigate">
+                    <li><a href="index.html" >首页</a></li>
+                    <li><a href="case.html" class="active">行业案例</a></li>
+                    <li><a href="customize.html">小程序定制</a></li>
+                    <li><a href="agent.html">加盟代理</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+             </div>
+          </div>  
+        </div>
+    </header>
+<div class="detail_banner">
+    <img src="images/banner-case.jpg" class="img-responsive">  
+</div>
+<div class="caseComputer" id="phone">
+    <div class="contain" style="overflow: hidden;">
+        <div class="caseImg_left1" style="float:left;">
+            <div class="caseCom caseIphones">
+                <img src="images/phone.jpg" class="phone_img1">
+                <div class="caseImg">
+                    <img :src="mainData.mainImg&&mainData.mainImg.length>0?mainData.mainImg[0].url:'' "  class="phone_img2">
+                </div>
+            </div>
+        </div>
+        <div class="caseImg_right1"  style="float:right;">
+            <div  class="case_intro">
+                <h5>{{mainData.title}}</h5>
+                <p>{{mainData.description}}</p>
+                <a href="#"><img src="images/paly.jpg">进入官网</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="caseShow_img phonecaseImg">
+    <div class="contain">
+        <div class="introduce_tlt">
+            <h5>界面展示</h5>
+            <span></span>
+        </div>
+        <div class="wx_detail">
+            <template  v-for="(item, index) in mainData.bannerImg">  
+                <div class="deatil_list">
+                    <img :src="item.url" class="img-responsive" >
+                </div>
+            </template>
+        </div>
+         
+    </div>
+</div>
+</div>
+<section class="footer" id="footer">
+    <div class="contain footer_cont flex">
+        <div class="footer_left flex">
+            <ul class="">
+                <li>服务领域</li>
+                <li>官网建设</li>
+                <li>网上商城</li>
+                <li>互动营销</li>
+                <li>品牌型网站</li>
+            </ul>
+            <ul class="">
+                <li>创意素材</li>
+                <li>创意设计</li>
+                <li>网站策划</li>
+                <li>新媒体运营</li>
+                <li>互联网整合销售</li>
+            </ul>
+            <ul class="">
+                <li>网站建设</li>
+                <li>建站优势</li>
+                <li>网站改版</li>
+                <li>全网站建设</li>
+                <li>手机网站</li>
+                <li>微信网站</li>
+            </ul>
+            <ul class="">
+                <li>关于我们</li>
+                <li>员工动态</li>
+                <li>公司聚餐</li>
+                <li>工作环境</li>
+                <li>站点地图</li>
+            </ul>
+        </div>
+        <div class="footer_right footer_ul">
+            <div class="qrcode">
+                <p>官方微信</p>
+                <img src="images/qrcode.jpg" class="img-responsive">
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script src="js/scrollReveal.js"></script>
+<script src="js/my.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script type="text/babel">
+var app = new Vue({
+    el: '#app',
+    data: function() {
+        return {
+            mainData: [],
+            paginate: {
+                count: 0,
+                currentPage: 1,
+                pagesize: 6,
+                is_page: true,
+            },
+            searchItem:{
+                menu_id:9,
+            },
+            pageArray:[],
+            allPages:0,
+            linkPage:'',
+            is_toggle:false,
+        }
+
+    },
+    
+    created: function () {
+
+        this.getMainData();
+
+    },
+    methods:{
+         toggleMenu:function(e){
+            var self = this;
+            self.is_toggle = !self.is_toggle;
+        },
+
+        getMainData() {
+            var self = this;
+            var postData = window.base.cloneForm(self.paginate);
+                postData.searchItem = {
+                    id:window.base.GetRequest().id,
+                }
+
+            var callback = (res)=>{
+                self.mainData = res.info.data[0];
+                self.paginate['count'] = res.info.total;
+                console.log(res.info.total)
+                window.base.computePageArr(self);
+            };
+            window.base.articleList(postData,callback);
+        },
+    }
+});
+</script>
+</script>
+<script type="text/javascript">
+$(window).on('scroll', function() {
+    if ($(window).scrollTop() > 200) {
+        $('.navbar').addClass('top-nav-collapse');
+    } else {
+        $('.navbar').removeClass('top-nav-collapse');
+    }
+
+     $('.caseComputer').waypoint(function(direction) {
+
+        if (direction === 'down' && !$(this.element).hasClass('animated')) {
+    
+            $('.caseComputer .caseImg_left1').addClass('fadeInLeft animated');
+            $('.caseComputer .caseImg_right1').addClass('fadeInRight animated');
+        }else{
+            $('.caseComputer .caseImg_left1').removeClass('fadeInLeft animated');
+            $('.caseComputer .caseImg_right1').removeClass('fadeInRight animated');
+        }
+    }, {
+        offset: '600px'
+
+    });
+});
+</script>
+</body>
+</html>

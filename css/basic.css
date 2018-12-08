@@ -1,0 +1,113 @@
+* {
+	margin:0;
+	padding: 0;
+}
+body {
+	font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif,"宋体"; 
+	color: #000;
+	font-size: 14px;
+	overflow-x: hidden !important;
+	position: relative;
+	font-weight:normal;
+}
+@font-face{
+	font-family: "siyuan";
+	src: url('../SourceHanSans-Light/SourceHanSans-Light.otf') format('otf');
+	src: url('../SourceHanSans-Light/SourceHanSans-Light.ttf') format('ttf');
+	src: url('../SourceHanSans-Light/SourceHanSans-Light.woff') format('woff');
+}
+h1,h2,h3,h4,h5,h6,p,ul { 
+	margin: 0;
+	padding: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+/*	font-family: 'Josefin Sans', sans-serif;*/
+	color: #272626;
+	text-transform: capitalize;
+	font-weight: normal;
+}
+
+
+a { cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
+	-webkit-transition: all .5s ease-out;
+	   -moz-transition: all .5s ease-out;
+	    -ms-transition: all .5s ease-out;
+	     -o-transition: all .5s ease-out;
+	        transition: all .5s ease-out;
+}
+a:hover,a:active,a:visited,a:focus {
+	text-decoration: none;
+	outline: none;
+}
+button {
+	border: none;
+	outline: none;
+	box-shadow: none;
+	display: block; 
+	padding: 0;
+}
+ul {
+	list-style-type: none;
+}
+/*img {width: 100%; display: block;}*/
+input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webkit-transition: all 0.4s ease-in-out;transition: all 0.4s ease-in-out;}
+.main-page-wrapper {overflow-x: hidden !important;}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+.fenye{
+	width: 100%;
+	text-align: center;
+	margin: 0.5rem auto;
+	border-radius: 4px;
+	overflow: hidden;
+	display: inline-block;
+	font-size: 0.3rem;
+	color: #333;
+}
+.fenye a{
+	font-size: 0.2rem;
+	padding: 0.1rem 0.2rem;
+	background: #fff;
+	color: #53728f;
+	display: inline-block;
+	border:1px #ddd solid;
+	margin-right:3px;
+	
+}
+.fenye span{
+	font-size: 0.2rem;
+}
+.fenye span input{
+	width: 1.5rem;
+	font-size: 0.2rem;
+	padding: 0.1rem 0.2rem;
+	outline: none;
+	border:1px #aaa solid !important;
+}
+.fenye a:hover,.fenye span:hover{
+	cursor: pointer;
+}
+.fenye a:hover,.fenye a.active{
+	background: #089fe3;
+	color: #fff;
+}
+#customize1{
+	opacity: 0;
+}
+#customize1_cont{
+	text-align: center;
+}
+#customize1_cont img{
+	margin:0 auto;
+}
+.animatedOpacity{
+	opacity:0;
+}

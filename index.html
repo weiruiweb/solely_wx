@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>纯粹科技</title>
+<!-- custom-theme -->
+<meta name="baidu-site-verification" content="z8EeuYl0nS" />
+<meta name="keywords" content="纯粹科技">
+<meta name="description" content="西安纯粹云科技">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<link href="css/basic.css" rel="stylesheet" type="text/css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<link href="css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="css/hover.css" rel="stylesheet" type="text/css"/>
+<!-- <link href="css/animate.css" rel="stylesheet" type="text/css" media="all" /> -->
+<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<script src="js/browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/base.js" type="application/javascript"></script>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script src="js/rem.js"></script>
+
+<!--[if IE 9]>
+ <style>
+    .animatedOpacity{
+        opacity:1;
+        }
+    .sort_in{
+    margin-top:0.3rem;
+    }
+ </style>
+<![endif]-->
+</head>
+<body style="background:#fff;">
+<div id="app">
+    <header>
+        <div class="navigation fixed-top">
+          <div class="navigation_box contain">
+             <div class="navigation_left flex">
+                 <a href="index.html"><img src="images/logo.jpg" class="img-responsive"></a>
+             </div>
+             <div class="nav_toggle hidden-this" @click="toggleMenu">
+                 <img src="images/nav.png" />
+             </div>
+             <div class="navigation_right" id="computer">
+                 <ul class="navigate">
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="case.html">行业案例</a></li>
+                    <li><a href="customize.html">小程序定制</a></li>
+                    <li><a href="agent.html">加盟代理</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+             </div>
+             <div class="navigation_right orgin" :class="(is_toggle?'after':'')" id="phone">
+                 <ul class="navigate">
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="case.html">行业案例</a></li>
+                    <li><a href="customize.html">小程序定制</a></li>
+                    <li><a href="agent.html">加盟代理</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+             </div>
+          </div>  
+        </div>
+    </header>
+    <div class="banner2">
+        <img src="images/banner2.png" class="img-responsive banner_img">
+        <div class="banner_top">
+            <div class="main1200">
+                <div class="banner_wx">
+                    <h2 class="fadeInLeft animated"><img src="images/wx_txt.png" class="img-responsive"></h2>
+                    <div class="wxTxt animated">
+                        <p class="fadeInLeft dalay-2s  animated">商城、营销、会员等一站式服务</p>
+                        <p class="fadeInLeft dalay-3s  animated">轻松打造独立专属的在线商城</p>
+                    </div>
+                    <a href="#">立即咨询</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xwSmall animatedOpacity">
+        <div class="contain">
+            <div class="wx_tlt">企业为什么要做小程序？</div>
+            <p class="wx_p1">小程序是一种不需要下载安装即可使用的应用，它实现了应用“触手可及”的梦想，用户扫一扫或者搜一搜即可打开应用</p>
+            <div class="xwSmallUser hidden-sm-this">
+                <div class="wx wx1 hidden-sm-this">支付、客服、消息通知</div>
+                <div class="circle_big circle_big1 hidden-sm-this">
+                     <img src="images/circle1.png">
+                </div>
+                <div class="wx wx2 hidden-sm-this">无需注册、无需关注、无需下载 </br>触手可得&扫码直接打开体验</div>
+                <div class="circle_big circle_big2 hidden-sm-this">
+                     <img src="images/circle2.png">
+                </div>
+                <div class="wx wx3 hidden-sm-this">微信会员数据共享</div>
+                <div class="circle_big circle_big3 hidden-sm-this">
+                     <img src="images/circle3.png">
+                </div>
+                <div class="wx wx4 hidden-sm-this">9亿微信活跃用户</div>
+                <div class="circle_big circle_big4 hidden-sm-this">
+                     <img src="images/circle4.png">
+                </div>
+                
+            </div>
+           <img src="images/small2.jpg" class="img-responsive hidden-this">
+        </div>
+    </div>
+    <div class="need_sort">
+        <!-- <img src="images/wxBg.jpg" class="sort_img"> -->
+        <div class="need_cont">
+            <div class="wx_tlt">全行业模式需求定制</div>
+            <p class="wx_p1">大势所趋，快点参与进来吧</p>
+            <div class="sort_all contain flexRowBetween">
+                <div class="sort_items animatedOpacity fade_leftTop">
+                    <img src="images/sort1.jpg" />
+                    <div class="sort_icon  flex">
+                        <div class="sort_in">
+                            <img src="images/small_icon1.png" />
+                            <h6>微官网</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="sort_items animatedOpacity fadein_top">
+                    <img src="images/sort2.jpg" />
+                    <div class="sort_icon  flex">
+                        <div class="sort_in">
+                            <img src="images/small_icon2.png" />
+                            <h6>微商城</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="sort_items animatedOpacity fadein_top">
+                    <img src="images/sort3.jpg" />
+                    <div class="sort_icon  flex">
+                        <div class="sort_in">
+                            <img src="images/small_icon3.png" />
+                            <h6>微房产</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="sort_items animatedOpacity fade_rightTop">
+                    <img src="images/sort4.jpg" />
+                    <div class="sort_icon  flex">
+                        <div class="sort_in">
+                            <img src="images/small_icon4.png" />
+                            <h6>微政府</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="sort_items animatedOpacity fade_leftBottom">
+                    <img src="images/sort5.jpg" />
+                    <div class="sort_icon  flex">
+                        <div class="sort_in">
+                            <img src="images/small_icon5.png" />
+                            <h6>微物业</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="sort_items animatedOpacity fadein_bottom">
+                    <img src="images/sort6.jpg" />
+                    <div class="sort_icon  flex">
+                        <div class="sort_in">
+                            <img src="images/small_icon6.png" />
+                            <h6>微美容</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="sort_items animatedOpacity fadein_bottom">
+                    <img src="images/sort7.jpg" />
+                    <div class="sort_icon  flex">
+                        <div class="sort_in">
+                            <img src="images/small_icon7.png" />
+                            <h6>微食品</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="sort_items animatedOpacity fade_rightBottom">
+                    <img src="images/sort8.jpg" />
+                    <div class="sort_icon  flex">
+                        <div class="sort_in">
+                            <img src="images/small_icon3.png" />
+                            <h6>微装修</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="customize">
+        <div class="contain">
+            <div class="wx_tlt">私人定制</div>
+            <p class="wx_p1">深入到每个营销环节，让您的微信平台更具特色，并能针对性的提升客户体验。</p>
+            <div class="customize_cont flex">
+                <div class="customize_left">
+                    <img src="images/customize_icon2.jpg">
+                </div>
+                <div class="customize_right">
+                    <div class="customize_item">
+                        <div class="customize_detail">
+                            <p class="p1">可靠</p>
+                            <p class="p2">为你提供为你提供为你提供为你提供</p>
+                        </div>
+                        <div class="customize_img">
+                            <img src="images/made_icon1.png">
+                        </div> 
+                    </div>
+                    <div class="customize_item">
+                        <div class="customize_detail">
+                            <p class="p1">可靠</p>
+                            <p class="p2">为你提供为你提供为你提供为你提供</p>
+                        </div>
+                        <div class="customize_img">
+                            <img src="images/made_icon2.png">
+                        </div>
+                    </div>
+                    <div class="customize_item">
+                        <div class="customize_detail">
+                            <p class="p1">可靠</p>
+                            <p class="p2">为你提供为你提供为你提供为你提供</p>
+                        </div>
+                        <div class="customize_img">
+                            <img src="images/made_icon3.png">
+                        </div>
+                    </div>
+                    <div class="customize_item">
+                        <div class="customize_detail">
+                            <p class="p1">可靠</p>
+                            <p class="p2">为你提供为你提供为你提供为你提供</p>
+                        </div>
+                        <div class="customize_img">
+                            <img src="images/made_icon4.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="made_now flexCenter">
+                <img src="images/made_icon8.png" class="img-responsive">立即定制
+            </div>
+        </div>
+    </div>
+    <div class="wx_process">
+<!--         <img src="images/wxBg2.jpg" class="process_img" /> -->
+        <div class="wx_process_cont">
+            <div class="wx_tlt">小程序开发流程</div>
+            <p class="wx_p1">完善的流程，让您后顾无忧</p>
+            <div class="process contain">
+                <div class="process_item process_first animatedOpacity">
+                    <img src="images/process1.png">
+                    <p>需求方案</p>
+                </div>
+                <div class="process_ling process_first animatedOpacity">
+                    <img src="images/dians.png" />
+                </div>
+                <div class="process_item process_first animatedOpacity">
+                    <img src="images/process2.png">
+                    <p>方案定制</p>
+                </div>
+                <div class="process_ling process_first animatedOpacity">
+                    <img src="images/dians.png" />
+                </div>
+                <div class="process_item process_first animatedOpacity">
+                    <img src="images/process3.png">
+                    <p>确定方案</p>
+                </div>
+                <div class="process_ling process_first animatedOpacity">
+                    <img src="images/dians.png" />
+                </div>
+                <div class="process_item process_first animatedOpacity">
+                    <img src="images/process4.png">
+                    <p>签订合同</p>
+                </div>
+                <div class="process_ling process_first animatedOpacity">
+                    <img src="images/dians.png" />
+                </div>
+                <div class="process_item process_first animatedOpacity">
+                    <img src="images/process5.png">
+                    <p>项目实施</p>
+                </div>
+                <div class="process_ling process_first animatedOpacity">
+                    <img src="images/dians.png" />
+                </div>
+                <div class="process_item process_first animatedOpacity">
+                    <img src="images/process6.png">
+                    <p>项目交付</p>
+                </div>
+                <div class="process_ling process_first animatedOpacity">
+                    <img src="images/dians.png" />
+                </div>
+                <div class="process_item process_first animatedOpacity">
+                    <img src="images/process7.png">
+                    <p>项目维护及升级</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wxSmallMarket animatedOpacity">
+        <div class="contain" >
+            <div class="wx_tlt">我们已经发现超过1000多个市场小程序</div>
+            <p class="wx_p1">将您的资源汇聚在平台，打造您的专属的平台小程序</p>
+            <div class="marketImg">
+                <div class="marketImg1"><img src="images/small4.png" class="img-responsive"></div>
+                
+                <img src="images/small6.png" class="img-responsive marketImg1">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="consult">
+    <div class="consult_cont">
+        <div class="consult_top">
+            <img src="images/consult.png">
+            <a href="tel:123456789"></a>
+        </div>
+        <div class="consult_bottom">
+            <ul class="consult_method">
+                <li>
+                    <a>
+                        <img src="images/qq_bg.png" class="consult_img">
+                        <span>在线客服</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <img src="images/wx_con.png" class="consult_img">
+                        <span>官方微信</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="">
+                        <img src="images/to_top.png">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<section class="footer" id="footer">
+    <div class="contain footer_cont">
+        <div class="footer_left">
+            <ul class="">
+                <li>服务领域</li>
+                <li>官网建设</li>
+                <li>网上商城</li>
+                <li>互动营销</li>
+                <li>品牌型网站</li>
+            </ul>
+            <ul class="">
+                <li>创意素材</li>
+                <li>创意设计</li>
+                <li>网站策划</li>
+                <li>新媒体运营</li>
+                <li>互联网整合销售</li>
+            </ul>
+            <ul class="">
+                <li>网站建设</li>
+                <li>建站优势</li>
+                <li>网站改版</li>
+                <li>全网站建设</li>
+                <li>手机网站</li>
+                <li>微信网站</li>
+            </ul>
+            <ul class="">
+                <li>关于我们</li>
+                <li>员工动态</li>
+                <li>公司聚餐</li>
+                <li>工作环境</li>
+                <li>站点地图</li>
+            </ul>
+        </div>
+        <div class="footer_right footer_ul">
+            <div class="qrcode">
+                <p>官方微信</p>
+                <img src="images/qrcode.jpg" class="img-responsive">
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript " src="js/bootstrap.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/my.js"></script>
+<script src="js/rem.js"></script>
+<script type="text/babel">
+var app = new Vue({
+    el: '#app',
+    data: function() {
+        return {
+            is_toggle:false,
+        }
+    },
+    created: function () {
+      
+    },
+    methods:{
+         toggleMenu:function(e){
+            var self = this;
+            self.is_toggle = !self.is_toggle;
+        },
+    }
+});
+</script>
+<script type="text/javascript">
+ $(window).load(function() {
+    $('.xwSmall').waypoint(function(direction) {
+       if (direction === 'down' && !$(this.element).hasClass('animated')) {
+            $('.xwSmall').addClass('fadeInUp animated');
+        }   
+    }, {
+        offset: '800px'
+    });
+
+    $('.wxSmallMarket').waypoint(function(direction) {
+       if (direction === 'down' && !$(this.element).hasClass('animated')) {
+            $('.wxSmallMarket').addClass('fadeInUp animated');
+        }   
+    }, {
+        offset: '600px'
+    });
+    $('.need_sort').waypoint(function(direction) {
+       if (direction === 'down' && !$(this.element).hasClass('animated')) {
+            $('.fade_leftTop').addClass('fadeInLeftTop animated'); 
+            $('.fade_rightTop').addClass('fadeInRightTop animated');
+            $('.fade_leftBottom').addClass('fadeInLeftBottom animated');
+            $('.fade_rightBottom').addClass('fadeInRightBottom animated');
+            $('.fadein_top').addClass('fadeInUp animated');
+            $('.fadein_bottom').addClass('fadeInDown animated');
+        }   
+    }, {
+        offset: '600px'
+    });
+    $('.customize').waypoint(function(direction) {
+        if (direction === 'down' && !$(this.element).hasClass('animated')) {
+            $('.customize_img').addClass('clude animated');
+            $('.customize_detail').addClass('clude1 animated');
+        }
+    }, {
+        offset: '600px'
+
+    }); 
+     $('.wx_process').waypoint(function(direction) {
+        if (direction === 'down' && !$(this.element).hasClass('animated')) {
+            $('.process_first').each(function(k) {
+                var el = $(this);
+                setTimeout(function() {
+                    el.addClass('fadeInLeft  animated');
+                  //  el.removeClass('.animatedOpacity');
+                }, k * 100, 'easeInOutExpo');
+            });
+        }
+    }, {
+        offset: '600px'
+
+    });
+});
+
+</script>
+</body>
+</html>
