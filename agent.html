@@ -354,13 +354,19 @@ if(w>768){
     });
 }
 $(window).load(function() {
-    $('.caseComputer').waypoint(function(direction) {
+     $('.agent_plan').waypoint(function(direction) {
         if (direction === 'down' && !$(this.element).hasClass('animated')) {
-            $('.caseCom').addClass('fadeInLeft animated');
-            $('.case_intro').addClass('fadeInRight animated');
-        }    
+            $('.agent_img').each(function(k) {
+                var el = $(this);
+                setTimeout(function() {
+                    el.addClass('agent_rotate animated');
+                  //  el.removeClass('.animatedOpacity');
+                }, k * 100, 'easeInOutExpo');
+            });
+        }
     }, {
-        offset: '400px'
+        offset: '600px'
+
     });
     $('.agent_condition').waypoint(function(direction) {
         console.log("nihao");

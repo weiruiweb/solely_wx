@@ -77,8 +77,8 @@
     </div>
     <div class="case"> 
         <div class="container">
-            <div v-if="mainData&&mainData.length>0">
-                <template v-for="(item, index) in mainData">
+            <!-- <div v-if="mainData&&mainData.length>0"> -->
+                <div v-for="(item, index) in mainData">
                     <div class="case_item case1">
                         <div class="case_in">
                             <div class="case_show  image-hover img-shadow-1" :data-id="item.id" @click="intoDetail">
@@ -91,13 +91,13 @@
                             </div>
                         </div>
                     </div>
-                </template>
-            </div>
-            <div v-else>
+                </div>
+            <!-- </div> -->
+           <!--  <div v-else>
                 <div class="no_data font6" style="text-align: center;margin-top: 2rem;">
                    没有更多数据
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
