@@ -561,9 +561,10 @@
 }
 .process{
     flex-wrap: wrap;
+    overflow: hidden;
 }
 .process_item{
-    width:7%;
+    width:7.6%;
     text-align: center;
     float:left;
 }
@@ -1037,6 +1038,14 @@ transition:all .6s ease-in-out;
     font-size: 0.16rem;
     color:#333;
 }
+.introduce_cont p{
+    text-align:left;
+    text-indent:0.3rem;
+    font-size: 0.16rem;
+    color:#333;
+    margin-top:0.2rem;
+    line-height:0.3rem;
+}
 #dituContent{
     min-height: 5rem;
 }
@@ -1047,11 +1056,20 @@ transition:all .6s ease-in-out;
 }
 .cooperation_cont{
     overflow: hidden;
+    padding-top:0.1rem;
 }
 .cooperation_cont .cooperation_item{
-    width:25%;
+    width:16%;
+    margin:0 2%;
     text-align: center;   
     float:left;
+    margin-bottom:0.3rem;
+    height:1.1rem;
+    line-height:1.1rem;
+    box-shadow: 0 0 0 0.02rem #eee;
+}
+.cooperation_item img{
+    margin:0.1rem auto;
 }
 /************************留言****************************/
 .message{
@@ -1115,11 +1133,16 @@ transition:all .6s ease-in-out;
     background: url(../images/about_bg.jpg) no-repeat center;
     padding:0.5rem;
 }
-.message_right p{
+.message_right .p1{
     font-size: 0.16rem;
     color:#333;
     padding-left:0.2rem;
     border-left: solid 4px #089fe3;
+}
+.message_right .p2{
+   font-size: 0.16rem;
+    color:#333;
+    padding-left:0.2rem; 
 }
 /******************详情页**********************/
 .detail_banner{
@@ -1187,11 +1210,11 @@ transition:all .6s ease-in-out;
 .phonecaseImg img{box-shadow: 0px 0px 1px #666;}
 .phonecaseImg{margin-bottom: 250px;}
 .caseImg_left1{
-    width: 50%;
+    width: 36%;
     float:left;
 }
 .caseImg_right1{
-    width:50%;
+    width:64%;
     float:right;
 }
 .deatil_list{

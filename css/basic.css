@@ -74,23 +74,24 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
 }
 .fenye a{
 	font-size: 0.2rem;
-	padding: 0.1rem 0.2rem;
+	padding: 0.05rem 0.15rem;
 	background: #fff;
 	color: #53728f;
 	display: inline-block;
 	border:1px #ddd solid;
-	margin-right:3px;
-	
+	margin-right:5px;
+	border-radius:0.1rem;
 }
 .fenye span{
 	font-size: 0.2rem;
 }
 .fenye span input{
-	width: 1.5rem;
+	width: 1.2rem;
 	font-size: 0.2rem;
-	padding: 0.1rem 0.2rem;
+	padding: 0.05rem 0.15rem;
 	outline: none;
 	border:1px #aaa solid !important;
+	border-radius:0.1rem;
 }
 .fenye a:hover,.fenye span:hover{
 	cursor: pointer;
