@@ -1,5 +1,5 @@
 window.base={
-    g_restUrl:'https://api.solelycloud.com/api/public/index.php/api/v1/',
+    g_restUrl:'https://www.solelycloud.com/api/public/index.php/api/v1/',
     getData:function(params){
         if(!params.type){
             params.type='get';

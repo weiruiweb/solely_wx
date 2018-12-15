@@ -213,9 +213,10 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
 	position:absolute;
 	left:0;
 	top:0;
-	background:rgba(0,0,0,0.8);
+	background:transparent;
 	overflow:hidden;
-	z-index:9999;
+	z-index:-1;
+	display:none
 }
 .dialog{
 	width:5rem;
@@ -225,8 +226,9 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
 	position:fixed;
 	left:50%;
 	top:20%;
-	z-index:99999;
+	z-index:-1;
 	margin-left:-2.5rem;
+	display: none;
 }
 .dialog_cont{
 	width:60%;

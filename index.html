@@ -16,7 +16,6 @@
 <link href="css/hover.css" rel="stylesheet" type="text/css"/>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- <link href="css/animate.css" rel="stylesheet" type="text/css" media="all" /> -->
-<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <script src="js/browser.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -67,8 +66,8 @@
           </div>  
         </div>
     </header>
-    <div class="mask1" @click="mask" :style="is_show?'display:block':'display:none'">
-        <div class="dialog">
+    <div class="mask1" @click="mask" :style="is_show?'display:block;z-index:99999;background:rgba(0,0,0,0.8);':'display:none;z-index:-1'">
+        <div class="dialog" :style="is_show?'display:block;z-index:99999;':'display:none;z-index:-1'">
             <div class="dialog_cont">
                <div class="contactPhone">
                    <a class="font24 color6">联系电话：</a><a class="font18 color6">18192654258</a>
@@ -92,23 +91,24 @@
             <div class="carousel-inner" role="listbox">
                 <div  class="item active">
                   <img src="images/banner2.png" class="img-responsive banner_img">
+                  <div class="banner_top">
+                        <div class="main1200">
+                            <div class="banner_wx">
+                                <h2 class="fadeInLeft animated"><img src="images/wx_txt.png" class="img-responsive"></h2>
+                                <div class="wxTxt animated">
+                                    <p class="fadeInLeft dalay-2s  animated">商城、营销、会员等一站式服务</p>
+                                    <p class="fadeInLeft dalay-3s  animated">轻松打造独立专属的在线商城</p>
+                                </div>
+                                <a @click="consult">立即咨询</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div  class="item">
-                  <img src="images/banner2.png" class="img-responsive banner_img">
+                  <img src="images/banner2.jpg" class="img-responsive banner_img">
+                <div class="zixun"  @click="consult"></div>
                 </div>
             </div>  
-        </div>
-        <div class="banner_top">
-            <div class="main1200">
-                <div class="banner_wx">
-                    <h2 class="fadeInLeft animated"><img src="images/wx_txt.png" class="img-responsive"></h2>
-                    <div class="wxTxt animated">
-                        <p class="fadeInLeft dalay-2s  animated">商城、营销、会员等一站式服务</p>
-                        <p class="fadeInLeft dalay-3s  animated">轻松打造独立专属的在线商城</p>
-                    </div>
-                    <a @click="consult">立即咨询</a>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -116,12 +116,12 @@
         <div class="contain">
             <div class="wx_tlt">企业为什么要做小程序？</div>
             <p class="wx_p1">小程序是一种不需要下载安装即可使用的应用，它实现了应用“触手可及”的梦想，用户扫一扫或者搜一搜即可打开应用</p>
-            <div class="xwSmallUser hidden-sm-this">
+            <!-- <div class="xwSmallUser hidden-sm-this">
                 <div class="wx wx1 hidden-sm-this">支付、客服、消息通知</div>
                 <div class="circle_big circle_big1 hidden-sm-this">
                      <img src="images/circle1.png">
                 </div>
-                <div class="wx wx2 hidden-sm-this">无需注册、无需关注、无需下载 </br>触手可得&扫码直接打开体验</div>
+                <div class="wx wx2 hidden-sm-this">品牌塑造，提升客户体验 </div>
                 <div class="circle_big circle_big2 hidden-sm-this">
                      <img src="images/circle2.png">
                 </div>
@@ -129,13 +129,70 @@
                 <div class="circle_big circle_big3 hidden-sm-this">
                      <img src="images/circle3.png">
                 </div>
-                <div class="wx wx4 hidden-sm-this">9亿微信活跃用户</div>
+                <div class="wx wx4 hidden-sm-this">裂变式分销，免费10亿流量传播 </div>
                 <div class="circle_big circle_big4 hidden-sm-this">
                      <img src="images/circle4.png">
                 </div>
                 
+            </div> -->
+            <div class="">
+               <img src="images/small2.jpg" class="img-responsive">
+           </div>
+        </div>
+    </div>
+    <div class="function">
+        <div class="function_cont">
+            <div class="wx_tlt">功能积木</div>
+            <div class="function_all">
+                <div class="function_item">
+                    <img src="images/function1.jpg"/>
+                    <p>官网展示</p>
+                </div>
+                <div class="function_item">
+                    <img src="images/function2.jpg"/>
+                    <p>分类导航</p>
+                </div>
+                <div class="function_item">
+                    <img src="images/function3.jpg"/>
+                    <p>二级分销</p>
+                </div>
+                <div class="function_item">
+                    <img src="images/function4.jpg"/>
+                    <p>限时折扣</p>
+                </div>
+                <div class="function_item">
+                    <img src="images/function5.jpg"/>
+                    <p>在线预约</p>
+                </div>
+                <div class="function_item">
+                    <img src="images/function6.jpg"/>
+                    <p>多客服系统</p>
+                </div>
+                <div class="function_item">
+                    <img src="images/function7.jpg"/>
+                    <p>多人拼团</p>
+                </div>
+                <div class="function_item">
+                    <img src="images/function8.jpg"/>
+                    <p>店铺优惠</p>
+                </div>
+                <div class="function_item">
+                    <img src="images/function9.jpg"/>
+                    <p>会员等级</p>
+                </div>
+                <div class="function_item">
+                    <img src="images/function10.jpg"/>
+                    <p>会员积分</p>
+                </div>
+                <div class="function_item">
+                    <img src="images/function11.jpg"/>
+                    <p>积分商城</p>
+                </div>
+                <div class="function_item">
+                    <img src="images/function12.jpg"/>
+                    <p>模板消息</p>
+                </div>
             </div>
-           <img src="images/small2.jpg" class="img-responsive hidden-this">
         </div>
     </div>
     <div class="need_sort">
@@ -230,8 +287,8 @@
                 <div class="customize_right">
                     <div class="customize_item">
                         <div class="customize_detail">
-                            <p class="p1">可靠</p>
-                            <p class="p2">为你提供为你提供为你提供为你提供</p>
+                            <p class="p1">最适合</p>
+                            <p class="p2">完美结合企业真是需求</p>
                         </div>
                         <div class="customize_img">
                             <img src="images/made_icon1.png">
@@ -239,8 +296,8 @@
                     </div>
                     <div class="customize_item">
                         <div class="customize_detail">
-                            <p class="p1">可靠</p>
-                            <p class="p2">为你提供为你提供为你提供为你提供</p>
+                            <p class="p1">最省心</p>
+                            <p class="p2">从资质准备到代码上线全程服务</p>
                         </div>
                         <div class="customize_img">
                             <img src="images/made_icon2.png">
@@ -248,8 +305,8 @@
                     </div>
                     <div class="customize_item">
                         <div class="customize_detail">
-                            <p class="p1">可靠</p>
-                            <p class="p2">为你提供为你提供为你提供为你提供</p>
+                            <p class="p1">最灵活</p>
+                            <p class="p2">代码的拓展性完全满足未来需求</p>
                         </div>
                         <div class="customize_img">
                             <img src="images/made_icon3.png">
@@ -257,8 +314,8 @@
                     </div>
                     <div class="customize_item">
                         <div class="customize_detail">
-                            <p class="p1">可靠</p>
-                            <p class="p2">为你提供为你提供为你提供为你提供</p>
+                            <p class="p1">最特效</p>
+                            <p class="p2">专属产品经理,24小时响应</p>
                         </div>
                         <div class="customize_img">
                             <img src="images/made_icon4.png">
@@ -277,49 +334,49 @@
             <div class="wx_tlt">小程序开发流程</div>
             <p class="wx_p1">完善的流程，让您后顾无忧</p>
             <div class="process contain">
-                <div class="process_item process_first animatedOpacity">
+                <div class="process_item process_first">
                     <img src="images/process1.png">
                     <p>需求方案</p>
                 </div>
-                <div class="process_ling process_first animatedOpacity">
+                <div class="process_ling process_first">
                     <img src="images/dians.png" />
                 </div>
-                <div class="process_item process_first animatedOpacity">
+                <div class="process_item process_first">
                     <img src="images/process2.png">
                     <p>方案定制</p>
                 </div>
-                <div class="process_ling process_first animatedOpacity">
+                <div class="process_ling process_first">
                     <img src="images/dians.png" />
                 </div>
-                <div class="process_item process_first animatedOpacity">
+                <div class="process_item process_first">
                     <img src="images/process3.png">
                     <p>确定方案</p>
                 </div>
-                <div class="process_ling process_first animatedOpacity">
+                <div class="process_ling process_first">
                     <img src="images/dians.png" />
                 </div>
-                <div class="process_item process_first animatedOpacity">
+                <div class="process_item process_first">
                     <img src="images/process4.png">
                     <p>签订合同</p>
                 </div>
-                <div class="process_ling process_first animatedOpacity">
+                <div class="process_ling process_first">
                     <img src="images/dians.png" />
                 </div>
-                <div class="process_item process_first animatedOpacity">
+                <div class="process_item process_first">
                     <img src="images/process5.png">
                     <p>项目实施</p>
                 </div>
-                <div class="process_ling process_first animatedOpacity">
+                <div class="process_ling process_first">
                     <img src="images/dians.png" />
                 </div>
-                <div class="process_item process_first animatedOpacity">
+                <div class="process_item process_first">
                     <img src="images/process6.png">
                     <p>项目交付</p>
                 </div>
-                <div class="process_ling process_first animatedOpacity">
+                <div class="process_ling process_first">
                     <img src="images/dians.png" />
                 </div>
-                <div class="process_item process_first animatedOpacity">
+                <div class="process_item process_first">
                     <img src="images/process7.png">
                     <p>项目维护及升级</p>
                 </div>
@@ -337,45 +394,144 @@
             </div>
         </div>
     </div>
-</div>
-<div class="consult">
-    <div class="consult_cont">
-        <div class="consult_top">
-            <img src="images/consult.png">
-            <a href="tel:68615681"></a>
-        </div>
-        <div class="consult_bottom">
-            <ul class="consult_method" @mouseover="enter" @mouseout="leave">
-                <li @mouseover="enter" @mouseout="leave">
-                    <a>
-                        <img src="images/qq_bg.png" class="consult_img">
-                        <span>在线客服</span>
-                    </a>
-                    <div class="qq_icon" :style="is_show1?'display:block':'display:none'">
-                        <p class="qq_text">客服QQ:1250185620</p>
-                        <div class="wx_consult">
-                            <img src="images/qrcode.jpg"/>
-                        </div>
-                        <div class="font18 color6">
-                            微信号:bobotou
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <a>
-                        <img src="images/wx_con.png" class="consult_img">
-                        <span>官方微信</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="back_top" onclick="back_top()">
-                        <img src="images/to_top.png">
-                    </a>
-                </li>
-            </ul>
+    <div class="consult">
+        <div class="consult_cont">
+            <div class="consult_top">
+                <img src="images/consult.png">
+                <a href="tel:18092651090"></a>
+            </div>
+            <div class="consult_bottom">
+                <div class="consult_method">
+                    <ul>
+                        <li data-id="0" @mouseover="enter" @mouseout="leave">
+                            <a data-id="0" @mouseover="enter" @mouseout="leave">
+                                <img src="images/qq_bg.png" class="consult_img"  data-id="0" @mouseover="enter" @mouseout="leave">
+                                <span data-id="0"  @mouseover="enter" @mouseout="leave">在线客服</span>
+                                <div class="qq_icon" :class="is_show1 == 0?'contact_show':'contact_hidden'">
+                                    <p class="qq_text">客服一:18092651090</p>
+                                    <p class="qq_text">客服二:18092651090</p>
+                                    <p class="qq_text">客服三:18092651090</p>
+                                </div>
+                            </a>
+                            
+                        </li>
+                        <li>
+                            <a >
+                                <img src="images/wx_con.png" class="consult_img" data-id="1"  @mouseover="enter" @mouseout="leave">
+                                <span data-id="1" @mouseover="enter" @mouseout="leave">官方微信</span>
+                            </a>
+                            <div class="qq_icon" :class="is_show1 == 1?'contact_show':'contact_hidden'">
+                               <p class="qq_text">微信一:18092651090</p>
+                                <p class="qq_text">微信二:18092651090</p>
+                                <p class="qq_text">微信三:18092651090</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="back_top" data-id="2"  @mouseover="enter" @mouseout="leave" onclick="back_top()">
+                                <img src="images/to_top.png" data-id="2"  @mouseover="enter" @mouseout="leave">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<div id="dituContent"></div>
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#333;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=W0dj26r0e4nDYKmCvXNBWR0Edcemccau"></script>
+<script type="text/javascript">
+
+    function initMap(){
+        createMap();
+        setMapEvent();
+        addMapControl();
+        addMarker();
+    }
+    
+    function createMap(){
+        var map = new BMap.Map("dituContent");
+        var point = new BMap.Point(108.899556,34.243055);
+        map.centerAndZoom(point,17);
+        window.map = map;
+    }
+    
+    function setMapEvent(){
+        map.enableDragging();
+        map.enableScrollWheelZoom();
+        map.enableDoubleClickZoom();
+        map.enableKeyboard();
+    }
+    
+    function addMapControl(){ 
+    var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+    map.addControl(ctrl_nav);
+    var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+    map.addControl(ctrl_ove);
+    var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+    map.addControl(ctrl_sca);
+    }
+
+    var markerArr = [{title:"陕西省西安市雁塔区科技路高新大都荟A座7号楼2007",content:"电话:18092651090",point:"108.901381|34.2428",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+         ];
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+            var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+            var iw = createInfoWindow(i);
+            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+            marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"transparent",
+                        color:"#000",
+                        cursor:"pointer",
+            });
+            
+            (function(){
+                var index = i;
+                var _iw = createInfoWindow(i);
+                var _marker = marker;
+                _marker.addEventListener("click",function(){
+                    this.openInfoWindow(_iw);
+                });
+                _iw.addEventListener("open",function(){
+                    _marker.getLabel().hide();
+                })
+                _iw.addEventListener("close",function(){
+                    _marker.getLabel().show();
+                })
+                label.addEventListener("click",function(){
+                    _marker.openInfoWindow(_iw);
+                })
+                if(!!json.isOpen){
+                    label.hide();
+                    _marker.openInfoWindow(_iw);
+                }
+            })()
+        }
+    }
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    function createIcon(json){
+        var icon = new BMap.Icon("images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();
+</script>
 <section class="footer" id="footer">
     <div class="contain footer_cont">
         <div class="footer_left">
@@ -429,7 +585,7 @@ var app = new Vue({
         return {
             is_toggle:false,
             is_show:false,
-            is_show1:false,
+            is_show1:999,
         }
     },
     created: function () {
@@ -448,14 +604,19 @@ var app = new Vue({
             var self = this;
             self.is_show = false;
         },
-         enter: function(e) {
+        enter(e) {
             var self = this;
-            self.is_show1 = true;                             
-            console.log(self.is_show1);             
+            var dataSet = window.base.getDataSet(e)
+            if(dataSet.id){
+                self.is_show1 = dataSet.id
+            }else{
+                self.is_show1 = ''
+            }
         },
-        leave: function(e) {
+        leave(e) {
+        console.log(222,e);
             var self = this;
-            self.is_show1 = false;                             
+            self.is_show1 = 99;                             
             console.log(self.is_show1);             
         },
     }

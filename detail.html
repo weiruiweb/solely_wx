@@ -68,15 +68,15 @@
             <div class="caseCom caseIphones">
                 <img src="images/phone.jpg" class="phone_img1">
                 <div class="caseImg">
-                    <img :src="mainData.mainImg&&mainData.mainImg.length>0?mainData.mainImg[0].url:'' "  class="phone_img2">
+                    <img :src="mainData.mainImg&&mainData.mainImg[1]?mainData.mainImg[1].url:'' "  class="phone_img2">
                 </div>
             </div>
         </div>
         <div class="caseImg_right1"  style="float:right;">
             <div  class="case_intro">
                 <h5>{{mainData.title}}</h5>
+                <img :src="mainData.mainImg&&mainData.mainImg[2]?mainData.mainImg[2].url:'' "  class="phone_img2">
                 <p>{{mainData.description}}</p>
-                <a href="#"><img src="images/paly.jpg">进入官网</a>
             </div>
         </div>
     </div>
@@ -205,20 +205,20 @@ $(window).on('scroll', function() {
         $('.navbar').removeClass('top-nav-collapse');
     }
 
-     $('.caseComputer').waypoint(function(direction) {
+    //  $('.caseComputer').waypoint(function(direction) {
 
-        if (direction === 'down' && !$(this.element).hasClass('animated')) {
+    //     if (direction === 'down' && !$(this.element).hasClass('animated')) {
     
-            $('.caseComputer .caseImg_left1').addClass('fadeInLeft animated');
-            $('.caseComputer .caseImg_right1').addClass('fadeInRight animated');
-        }else{
-            $('.caseComputer .caseImg_left1').removeClass('fadeInLeft animated');
-            $('.caseComputer .caseImg_right1').removeClass('fadeInRight animated');
-        }
-    }, {
-        offset: '600px'
+    //         $('.caseComputer .caseImg_left1').addClass('fadeInLeft animated');
+    //         $('.caseComputer .caseImg_right1').addClass('fadeInRight animated');
+    //     }else{
+    //         $('.caseComputer .caseImg_left1').removeClass('fadeInLeft animated');
+    //         $('.caseComputer .caseImg_right1').removeClass('fadeInRight animated');
+    //     }
+    // }, {
+    //     offset: '600px'
 
-    });
+    // });
 });
 </script>
 </body>

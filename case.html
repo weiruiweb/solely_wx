@@ -18,7 +18,6 @@
 <link href="css/responsive.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/hover.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/animate.css" rel="stylesheet" type="text/css" media="all" />
-<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <script src="js/rem.js"></script>
 <script src="js/browser.min.js"></script>
@@ -68,8 +67,8 @@
             <div class="case_sort_item">
                 <p :style="currentId == 0?'color:#089fe3;border-bottom:solid 1px #089fe3':''" @click="changeMenu">全部</p>
             </div>
-            <template v-if="titleData.child&&titleData.child.length > 0">
-                <div class="case_sort_item" v-for="(item,index) in titleData.child" >
+            <template v-if="labelData.length > 0">
+                <div class="case_sort_item" v-for="(item,index) in labelData" >
                     <p :style="currentId == item.id?'color:#089fe3;border-bottom:solid 1px #089fe3':''" :data-id="item.id" @click="changeMenu">{{item.title}}</p>
                 </div>
             </template>
@@ -80,14 +79,14 @@
             <!-- <div v-if="mainData&&mainData.length>0"> -->
                 <div v-for="(item, index) in mainData">
                     <div class="case_item case1">
-                        <div class="case_in">
+                        <div class="case_in" :data-id="item.id" @click="intoDetail">
                             <div class="case_show  image-hover img-shadow-1" :data-id="item.id" @click="intoDetail">
-                                <img :src="item.mainImg&&item.mainImg.length>0?item.mainImg[0].url:''" class="img-responsive ">
+                                <img :src="item.mainImg&&item.mainImg.length>0?item.mainImg[0].url:''" class="img-responsive " :data-id="item.id" @click="intoDetail">
                                 <div class="mask" :data-id="item.id" @click="intoDetail"></div>
                             </div>
                             <div class="check_more hidden-xs" :data-id="item.id" @click="intoDetail">查看详情</div>
                             <div class="case_title" :data-id="item.id" @click="intoDetail">
-                                <p>{{item.title}}</p>
+                                <p :data-id="item.id" @click="intoDetail">{{item.title}}</p>
                             </div>
                         </div>
                     </div>
@@ -102,21 +101,19 @@
     </div>
 
     <div class="fenye">
-         <div v-if="mainData&&mainData.length>8">
-            <span>
-                共：{{allPages}}页
-            </span>
-            <a class="pages backPage" data-type="back" @click="changePage">上一页</a>
-            <span v-for="item in pageArray">
-                <a v-if="item == paginate.currentPage" class="currentpages active" >{{item}}</a>
-                <a v-if="item != paginate.currentPage" class="currentpages" :data-page="item"  @click="linkTo">{{item}}</a>
-            </span>
-            <a class="pages nextPage" data-type="next" @click="changePage">下一页</a>
-            <span>
-                跳转至：
-                <input style="border:1px solid black;" :data-page="linkPage" v-model="linkPage" @blur="linkTo" />
-            </span>
-        </div>
+        <span>
+            共：{{allPages}}页
+        </span>
+        <a class="pages backPage" data-type="back" @click="changePage">上一页</a>
+        <span v-for="item in pageArray">
+            <a v-if="item == paginate.currentPage" class="currentpages active" >{{item}}</a>
+            <a v-if="item != paginate.currentPage" class="currentpages" :data-page="item"  @click="linkTo">{{item}}</a>
+        </span>
+        <a class="pages nextPage" data-type="next" @click="changePage">下一页</a>
+        <span>
+            跳转至：
+            <input style="border:1px solid black;" :data-page="linkPage" v-model="linkPage" @blur="linkTo" />
+        </span>
     </div>
 </div>
 </div>
@@ -170,7 +167,7 @@
 <script src="js/jquery.waypoints.min.js"></script>
 <script src="js/my.js"></script>
 <script src="js/rem.js"></script>
-<script type="text/babel">
+<script type="text/javascript">
 var app = new Vue({
         el: '#app',
         data: function() {
@@ -180,15 +177,16 @@ var app = new Vue({
                 paginate: { 
                     count: 0, 
                     currentPage: 1, 
-                    pagesize:9, 
+                    pagesize:6, 
                     is_page: true, 
                 },
-                searchItem: { thirdapp_id: 20, },
+                searchItem:{ thirdapp_id: 21},
                 pageArray: [],
                 allPages: 0,
                 linkPage: '',
                 is_toggle:false,
                 caseMenu: [],
+                menu_array:[],
                 menu: [],
                 titleData: [],
                 currentId: 0,
@@ -208,23 +206,23 @@ var app = new Vue({
                     paginate: { 
                         count: 0, 
                         currentPage: 1, 
-                        pagesize:9, 
+                        pagesize:24, 
                         is_page: true, 
                     },
                 };
                 postData.searchItem = { 
-                    type: 1 
+                    type: 1,
+                    thirdapp_id: 21 
                 };
                 var callback = function(res) {
                     self.menu = res.info.data;
-                    self.caseMenu = window.base.findKeyFromArray(self.menu, 'title', '精品案例')[0];
-                    self.secondChild = window.base.findKeyFromArray(self.caseMenu.child, 'title', '小程序')[0];
-                    self.titleData = self.secondChild;
-                    var lengthTwo = self.secondChild['child'].length;
-                    self.menu_array = [self.secondChild.id];
-                    for (var i = 0; i < lengthTwo; i++){ 
-                        self.menu_array.push(self.secondChild['child'][i].id); 
-                    };
+                    if(self.menu.length>0){
+                        for(var i =0;i<self.menu.length;i++){
+                            self.labelData.push(self.menu[i]);
+                            console.log(909,self.labelData)
+                            self.menu_array.push(self.menu[i].id)
+                        }
+                    }
                     self.getMainData();
                 };
                 window.base.labelGet(postData,callback);
