@@ -34,6 +34,15 @@
  </style>
 <![endif]-->
 </head>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?03dea8dfe0d099e2a89d71a819a7cf7a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 <body style="background:#fff;">
 <div id="app">
     <header>
@@ -387,27 +396,26 @@
                         <li data-id="0" @mouseover="enter" @mouseout="leave">
                             <a data-id="0" @mouseover="enter" @mouseout="leave">
                                 <img src="images/qq_bg.png" class="consult_img"  data-id="0" @mouseover="enter" @mouseout="leave">
-                                <span data-id="0" class="hidden-sm"  @mouseover="enter" @mouseout="leave">在线客服</span>
+                                <span data-id="0" class="hidden-sm"  @mouseover="enter" @mouseout="leave">客服微信</span>
                                 <div class="qq_icon" :class="is_show1 == 0?'contact_show':'contact_hidden'">
-                                    <p class="qq_text">客服一:18092651090</p>
-                                    <p class="qq_text">客服二:18092651090</p>
-                                    <p class="qq_text">客服三:18092651090</p>
+                                    <p class="qq_text">客服微信:18092651090</p>
+                                    <div class="qrcode">
+                                        <img src="images/qrcode1.jpg"/>
+                                    </div>
                                 </div>
-                            </a>
-                            
+                            </a> 
                         </li>
                         <li data-id="1" @mouseover="enter" @mouseout="leave">
                             <a data-id="1" @mouseover="enter" @mouseout="leave">
                                 <img src="images/wx_con.png" class="consult_img"  data-id="1" @mouseover="enter" @mouseout="leave">
                                 <span data-id="1" class="hidden-sm"  @mouseover="enter" @mouseout="leave">官方微信</span>
                                 <div class="qq_icon" :class="is_show1 == 1?'contact_show':'contact_hidden'">
-                                    <p class="qq_text">微信:18092651090</p>
+                                    <p class="qq_text">官方微信:18092651090</p>
                                     <div class="qrcode">
                                         <img src="images/qrcode.jpg"/>
                                     </div>
                                 </div>
-                            </a>
-                            
+                            </a> 
                         </li>
                         <li>
                             <a class="back_top" data-id="2"  @mouseover="enter" @mouseout="leave" onclick="back_top()">
@@ -420,13 +428,20 @@
         </div>
     </div>
 </div>
-<div id="dituContent" style="background:rgba(0,0,0,0.5);"></div>
+<div id="dituContent"></div>
 <style type="text/css">
-    html,body{margin:0;padding:0;}
     .iw_poi_title {color:#333;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
     .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+    .BMapLabel{
+        background-color: rgb(255, 255, 255,0);
+    }
 </style>
-
+<style type="text/css">
+    #newBridge .icon-right-center{
+        top:58%;
+        left:0px;
+    }
+</style>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=W0dj26r0e4nDYKmCvXNBWR0Edcemccau"></script>
 <script type="text/javascript">
 
@@ -439,6 +454,7 @@
     
     function createMap(){
         var map = new BMap.Map("dituContent");
+        map.setMapStyle({style:'dark'});
         var point = new BMap.Point(108.899556,34.243055);
         map.centerAndZoom(point,17);
         window.map = map;
@@ -475,9 +491,9 @@
             marker.setLabel(label);
             map.addOverlay(marker);
             label.setStyle({
-                        borderColor:"transparent",
-                        color:"#000",
-                        cursor:"pointer",
+                borderColor:"transparent",
+                color:"#089fe3",
+                cursor:"pointer",
             });
             
             (function(){
@@ -548,7 +564,7 @@
                 <li>站点地图</li>
             </ul>
         </div>
-        <div class="footer_right footer_ul">
+        <div class="footer_right footer_ul hidden-xs">
             <div class="qrcode">
                 <p>官方微信</p>
                 <img src="images/qrcode.jpg" class="img-responsive">

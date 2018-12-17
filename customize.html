@@ -15,11 +15,9 @@
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/basic.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/navbar.css" rel="stylesheet" type="text/css"/>
 <link href="css/responsive.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/hover.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/animate.css" rel="stylesheet" type="text/css" media="all" />
-<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <script src="js/rem.js"></script>
 <script src="js/browser.min.js"></script>
@@ -83,9 +81,52 @@
         <p class="wx_p1">直接发布定制，或者联系电话，QQ联系我们为您定制</p>
         <div class="made_but">立即定制 ></div>
         <ul class="contact_cont">
-            <li>电话：400-000-000</li>
-            <li>QQ：916369556</li>
+            <li>电话：18092651090</li>
+            <li>微信：18092651090</li>
         </ul>
+    </div>
+     <div class="consult">
+        <div class="consult_cont">
+            <div class="consult_top">
+                <img src="images/consult.png">
+                <a href="tel:18092651090"></a>
+            </div>
+            <div class="consult_bottom">
+                <div class="consult_method">
+                    <ul>
+                        <li data-id="0" @mouseover="enter" @mouseout="leave">
+                            <a data-id="0" @mouseover="enter" @mouseout="leave">
+                                <img src="images/qq_bg.png" class="consult_img"  data-id="0" @mouseover="enter" @mouseout="leave">
+                                <span data-id="0" class="hidden-sm"  @mouseover="enter" @mouseout="leave">客服微信</span>
+                                <div class="qq_icon" :class="is_show1 == 0?'contact_show':'contact_hidden'">
+                                    <p class="qq_text">客服微信:18092651090</p>
+                                    <div class="qrcode">
+                                        <img src="images/qrcode1.jpg"/>
+                                    </div>
+                                </div>
+                            </a> 
+                        </li>
+                        <li data-id="1" @mouseover="enter" @mouseout="leave">
+                            <a data-id="1" @mouseover="enter" @mouseout="leave">
+                                <img src="images/wx_con.png" class="consult_img"  data-id="1" @mouseover="enter" @mouseout="leave">
+                                <span data-id="1" class="hidden-sm"  @mouseover="enter" @mouseout="leave">官方微信</span>
+                                <div class="qq_icon" :class="is_show1 == 1?'contact_show':'contact_hidden'">
+                                    <p class="qq_text">官方微信:18092651090</p>
+                                    <div class="qrcode">
+                                        <img src="images/qrcode.jpg"/>
+                                    </div>
+                                </div>
+                            </a> 
+                        </li>
+                        <li>
+                            <a class="back_top" data-id="2"  @mouseover="enter" @mouseout="leave" onclick="back_top()">
+                                <img src="images/to_top.png" data-id="2"  @mouseover="enter" @mouseout="leave">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <section class="footer">
@@ -143,9 +184,8 @@ var app = new Vue({
     el: '#app',
     data: function() {
         return {
-          
             is_toggle:false,
-           
+            is_show1:999,
         }
 
     },
@@ -157,6 +197,28 @@ var app = new Vue({
          toggleMenu:function(e){
             var self = this;
             self.is_toggle = !self.is_toggle;
+        },
+        consult:function(e){
+            var self = this;
+            self.is_show = !self.is_show;
+        },
+        mask:function(e){
+            var self = this;
+            self.is_show = false;
+        },
+        enter(e) {
+            var self = this;
+            var dataSet = window.base.getDataSet(e)
+            if(dataSet.id){
+                self.is_show1 = dataSet.id
+                console.log(self.is_show1)
+            }else{
+                self.is_show1 = ''
+            }
+        },
+        leave(e) {
+            var self = this;
+            self.is_show1 = 999;                                         
         },
 
     }
@@ -174,16 +236,6 @@ if(w>768){
         } 
     });
 }
-$(window).load(function() {
-    $('#customize1').waypoint(function(direction) {
-        if (direction === 'down' && !$(this.element).hasClass('animated')) {
-            $('#customize1').addClass('fadeInUp animated');
-        }
-           
-    }, {
-        offset: '800px'
-    });
-});
 </script>
 </body>
 </html>

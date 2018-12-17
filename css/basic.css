@@ -100,9 +100,7 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
 	background: #089fe3;
 	color: #fff;
 }
-#customize1{
-	opacity: 0;
-}
+
 #customize1_cont{
 	text-align: center;
 }

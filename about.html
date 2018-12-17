@@ -167,6 +167,49 @@
             </div>
         </div>
     </div>
+     <div class="consult">
+        <div class="consult_cont">
+            <div class="consult_top">
+                <img src="images/consult.png">
+                <a href="tel:18092651090"></a>
+            </div>
+            <div class="consult_bottom">
+                <div class="consult_method">
+                    <ul>
+                        <li data-id="0" @mouseover="enter" @mouseout="leave">
+                            <a data-id="0" @mouseover="enter" @mouseout="leave">
+                                <img src="images/qq_bg.png" class="consult_img"  data-id="0" @mouseover="enter" @mouseout="leave">
+                                <span data-id="0" class="hidden-sm"  @mouseover="enter" @mouseout="leave">客服微信</span>
+                                <div class="qq_icon" :class="is_show1 == 0?'contact_show':'contact_hidden'">
+                                    <p class="qq_text">客服微信:18092651090</p>
+                                    <div class="qrcode">
+                                        <img src="images/qrcode1.jpg"/>
+                                    </div>
+                                </div>
+                            </a> 
+                        </li>
+                        <li data-id="1" @mouseover="enter" @mouseout="leave">
+                            <a data-id="1" @mouseover="enter" @mouseout="leave">
+                                <img src="images/wx_con.png" class="consult_img"  data-id="1" @mouseover="enter" @mouseout="leave">
+                                <span data-id="1" class="hidden-sm"  @mouseover="enter" @mouseout="leave">官方微信</span>
+                                <div class="qq_icon" :class="is_show1 == 1?'contact_show':'contact_hidden'">
+                                    <p class="qq_text">官方微信:18092651090</p>
+                                    <div class="qrcode">
+                                        <img src="images/qrcode.jpg"/>
+                                    </div>
+                                </div>
+                            </a> 
+                        </li>
+                        <li>
+                            <a class="back_top" data-id="2"  @mouseover="enter" @mouseout="leave" onclick="back_top()">
+                                <img src="images/to_top.png" data-id="2"  @mouseover="enter" @mouseout="leave">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div id="dituContent"></div>
 <style type="text/css">
@@ -186,6 +229,7 @@
     
     function createMap(){
         var map = new BMap.Map("dituContent");
+        map.setMapStyle({style:'dark'});
         var point = new BMap.Point(108.899556,34.243055);
         map.centerAndZoom(point,17);
         window.map = map;
@@ -317,15 +361,14 @@ var app = new Vue({
     el: '#app',
     data: function() {
         return {
-            searchItem:{
-                thirdapp_id: 20,
-                
-            },
             is_toggle:false,
+            is_show1:999,
             submitData:{
                 title:'',
                 phone:'',
                 content:'',
+                thirdapp_id: 21,
+                type:2,
             },
         }
 
@@ -342,10 +385,9 @@ var app = new Vue({
 
         messageAdd() {
             var self = this;
+            var postData = {};
             var postData = {
-                data:{
-                   submit:self.submitData
-                }
+                data:self.submitData
             };
             var callback = (res)=>{
                 if(res.solely_code==100000){
@@ -372,6 +414,28 @@ var app = new Vue({
               alert('请补全信息');
             };
           },
+          consult:function(e){
+            var self = this;
+            self.is_show = !self.is_show;
+        },
+        mask:function(e){
+            var self = this;
+            self.is_show = false;
+        },
+        enter(e) {
+            var self = this;
+            var dataSet = window.base.getDataSet(e)
+            if(dataSet.id){
+                self.is_show1 = dataSet.id
+                console.log(self.is_show1)
+            }else{
+                self.is_show1 = ''
+            }
+        },
+        leave(e) {
+            var self = this;
+            self.is_show1 = 999;                                         
+        },
     }
 });
 
