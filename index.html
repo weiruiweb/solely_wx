@@ -116,25 +116,6 @@
         <div class="contain">
             <div class="wx_tlt">企业为什么要做小程序？</div>
             <p class="wx_p1">小程序是一种不需要下载安装即可使用的应用，它实现了应用“触手可及”的梦想，用户扫一扫或者搜一搜即可打开应用</p>
-            <!-- <div class="xwSmallUser hidden-sm-this">
-                <div class="wx wx1 hidden-sm-this">支付、客服、消息通知</div>
-                <div class="circle_big circle_big1 hidden-sm-this">
-                     <img src="images/circle1.png">
-                </div>
-                <div class="wx wx2 hidden-sm-this">品牌塑造，提升客户体验 </div>
-                <div class="circle_big circle_big2 hidden-sm-this">
-                     <img src="images/circle2.png">
-                </div>
-                <div class="wx wx3 hidden-sm-this">微信会员数据共享</div>
-                <div class="circle_big circle_big3 hidden-sm-this">
-                     <img src="images/circle3.png">
-                </div>
-                <div class="wx wx4 hidden-sm-this">裂变式分销，免费10亿流量传播 </div>
-                <div class="circle_big circle_big4 hidden-sm-this">
-                     <img src="images/circle4.png">
-                </div>
-                
-            </div> -->
             <div class="">
                <img src="images/small2.jpg" class="img-responsive">
            </div>
@@ -406,7 +387,7 @@
                         <li data-id="0" @mouseover="enter" @mouseout="leave">
                             <a data-id="0" @mouseover="enter" @mouseout="leave">
                                 <img src="images/qq_bg.png" class="consult_img"  data-id="0" @mouseover="enter" @mouseout="leave">
-                                <span data-id="0"  @mouseover="enter" @mouseout="leave">在线客服</span>
+                                <span data-id="0" class="hidden-sm"  @mouseover="enter" @mouseout="leave">在线客服</span>
                                 <div class="qq_icon" :class="is_show1 == 0?'contact_show':'contact_hidden'">
                                     <p class="qq_text">客服一:18092651090</p>
                                     <p class="qq_text">客服二:18092651090</p>
@@ -415,16 +396,18 @@
                             </a>
                             
                         </li>
-                        <li>
-                            <a >
-                                <img src="images/wx_con.png" class="consult_img" data-id="1"  @mouseover="enter" @mouseout="leave">
-                                <span data-id="1" @mouseover="enter" @mouseout="leave">官方微信</span>
+                        <li data-id="1" @mouseover="enter" @mouseout="leave">
+                            <a data-id="1" @mouseover="enter" @mouseout="leave">
+                                <img src="images/wx_con.png" class="consult_img"  data-id="1" @mouseover="enter" @mouseout="leave">
+                                <span data-id="1" class="hidden-sm"  @mouseover="enter" @mouseout="leave">官方微信</span>
+                                <div class="qq_icon" :class="is_show1 == 1?'contact_show':'contact_hidden'">
+                                    <p class="qq_text">微信:18092651090</p>
+                                    <div class="qrcode">
+                                        <img src="images/qrcode.jpg"/>
+                                    </div>
+                                </div>
                             </a>
-                            <div class="qq_icon" :class="is_show1 == 1?'contact_show':'contact_hidden'">
-                               <p class="qq_text">微信一:18092651090</p>
-                                <p class="qq_text">微信二:18092651090</p>
-                                <p class="qq_text">微信三:18092651090</p>
-                            </div>
+                            
                         </li>
                         <li>
                             <a class="back_top" data-id="2"  @mouseover="enter" @mouseout="leave" onclick="back_top()">
@@ -609,15 +592,14 @@ var app = new Vue({
             var dataSet = window.base.getDataSet(e)
             if(dataSet.id){
                 self.is_show1 = dataSet.id
+                console.log(self.is_show1)
             }else{
                 self.is_show1 = ''
             }
         },
         leave(e) {
-        console.log(222,e);
             var self = this;
-            self.is_show1 = 99;                             
-            console.log(self.is_show1);             
+            self.is_show1 = 999;                                         
         },
     }
 });
