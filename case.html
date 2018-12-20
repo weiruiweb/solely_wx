@@ -123,12 +123,14 @@
             </div>
             <div class="consult_bottom">
                 <div class="consult_method">
+                    <div class="line_right"  @mouseover="enter(9)"></div>
+
                     <ul>
-                        <li data-id="0" @mouseover="enter" @mouseout="leave">
-                            <a data-id="0" @mouseover="enter" @mouseout="leave">
-                                <img src="images/qq_bg.png" class="consult_img"  data-id="0" @mouseover="enter" @mouseout="leave">
-                                <span data-id="0" class="hidden-sm"  @mouseover="enter" @mouseout="leave">客服微信</span>
-                                <div class="qq_icon" :class="is_show1 == 0?'contact_show':'contact_hidden'">
+                        <li>
+                            <a @mouseover="enter(0)" @mouseout="leave(9)" @click="click_leave(0)">
+                                <img src="images/qq_bg.png" class="consult_img">
+                                <span data-id="0" class="hidden-sm" >客服微信</span>
+                                <div class="qq_icon":class="wx_show == 0?'contact_show':'contact_hidden'">
                                     <p class="qq_text">客服微信:18092651090</p>
                                     <div class="qrcode">
                                         <img src="images/qrcode1.jpg"/>
@@ -136,11 +138,11 @@
                                 </div>
                             </a> 
                         </li>
-                        <li data-id="1" @mouseover="enter" @mouseout="leave">
-                            <a data-id="1" @mouseover="enter" @mouseout="leave">
-                                <img src="images/wx_con.png" class="consult_img"  data-id="1" @mouseover="enter" @mouseout="leave">
-                                <span data-id="1" class="hidden-sm"  @mouseover="enter" @mouseout="leave">官方微信</span>
-                                <div class="qq_icon" :class="is_show1 == 1?'contact_show':'contact_hidden'">
+                        <li data-id="1">
+                            <a @mouseover="enter(1)" @mouseout="leave(9)" @click="click_leave(1)">
+                                <img src="images/wx_con.png" class="consult_img" >
+                                <span data-id="1" class="hidden-sm">官方微信</span>
+                                <div class="qq_icon" :class="wx_show == 1?'contact_show':'contact_hidden'">
                                     <p class="qq_text">官方微信:18092651090</p>
                                     <div class="qrcode">
                                         <img src="images/qrcode.jpg"/>
@@ -149,7 +151,7 @@
                             </a> 
                         </li>
                         <li>
-                            <a class="back_top" data-id="2"  @mouseover="enter" @mouseout="leave" onclick="back_top()">
+                            <a class="back_top"  @mouseover="enter(2)" @mouseout="leave(9)" onclick="back_top()">
                                 <img src="images/to_top.png" data-id="2"  @mouseover="enter" @mouseout="leave">
                             </a>
                         </li>
@@ -163,7 +165,7 @@
 </div>
 <section class="footer">
     <div class="container footer_cont">
-        <div class="col-md-10 col-xs-12">
+        <div class="col-md-10 col-xs-12   hidden-xs">
             <ul class="col-md-3 col-xs-6">
                 <li>服务领域</li>
                 <li>官网建设</li>
@@ -201,8 +203,8 @@
             </div>
         </div>
         <div class="clear"></div>
-        <div class="hotPhone col-md-12">
-            全国客服热线:18092651090(周一至周日9:0-21:00）
+       <div class="hotPhone col-md-12">
+            <span>全国客服热线:18092651090</span><span>(周一至周日9:0-21:00）</span>
         </div>
     </div>
 </section>
@@ -211,12 +213,12 @@
 <script src="js/jquery.waypoints.min.js"></script>
 <script src="js/my.js"></script>
 <script src="js/rem.js"></script>
-<script type="text/babel">
+<script type="text/javascript">
 var app = new Vue({
         el: '#app',
         data: function() {
             return {
-                is_show1:999,
+                wx_show:999,
                 mainData: [],
                 labelData: [],
                 paginate: { 
@@ -260,11 +262,12 @@ var app = new Vue({
                     thirdapp_id: 21 
                 };
                 var callback = function(res) {
-                    self.menu = res.info.data;
+                    if(res.info.data[0].child[0].child.length>0){
+                        self.menu = res.info.data[0].child[0].child;
+                    }
                     if(self.menu.length>0){
                         for(var i =0;i<self.menu.length;i++){
                             self.labelData.push(self.menu[i]);
-                            console.log(909,self.labelData)
                             self.menu_array.push(self.menu[i].id)
                         }
                     }
@@ -321,20 +324,22 @@ var app = new Vue({
                 var self = this;
                 self.is_show = false;
             },
-            enter(e) {
-                var self = this;
-                var dataSet = window.base.getDataSet(e)
-                if(dataSet.id){
-                    self.is_show1 = dataSet.id
-                    console.log(self.is_show1)
-                }else{
-                    self.is_show1 = ''
-                }
+            enter(index) {
+            var self = this;
+            var cursorId = index;
+                self.wx_show =cursorId;
+ 
             },
-            leave(e) {
+            leave(index) {
                 var self = this;
-                self.is_show1 = 999;                                         
+                var cursorId1 = index;
+                self.wx_show = cursorId1;                                         
             },
+            click_leave(index){
+                var self = this;
+                var cursorId1 = index;
+                    self.wx_show =cursorId1;
+            }
         }
     });
 

@@ -94,7 +94,7 @@
 		margin-top: 1.2rem;
 	}
 	.caseImg_left1{
-		width:44%;
+		width:34%;
 	}
 	.case_intro p{
 		margin-top:20px;
@@ -237,6 +237,7 @@
 	.footer_right,.footer_left{
 		width:100%;
 	}
+
 	.footer_cont ul{
 		width:50%;
 	}
@@ -418,6 +419,13 @@
 	
 }
 @media (max-width: 480px) {
+	.hotPhone span{
+		display:block;
+		width:100%;
+	}
+	.footer_cont{
+		padding-top:0.2rem;
+	}
 	.qq_icon{
 		top:-2rem;
 	}
@@ -483,7 +491,7 @@
 		min-height: 5.25rem;
 	}
 	.caseIphones{
-		left:1rem;
+		left:0rem;
 	}
 	#wx_process img{
 		min-height: 5rem;
@@ -520,10 +528,13 @@
 		margin-left:-5rem;
 	}
 	.wx_contanct img{
-		width:3.2rem;
-		height:3.2rem;
+		width:5.2rem;
+		height:5.2rem;
 	}
 	.contactPhone a{
+		font-size:0.4rem;
+	}
+	.contactPhone span{
 		font-size:0.4rem;
 	}
 	.introduce_cont p{
@@ -536,7 +547,23 @@
 	.qrcode img{
 		width:4rem;
 		height:4rem;
-		margin:0 auto;
+		margin:0 auto 0.4rem auto;
 	}
-	
+	.qrcode p{
+		font-size:0.4rem;
+	}
+	.qq_icon{
+		right:1rem;
+	}
+	.cooperation_cont .cooperation_item{
+	    width:20%;
+	    margin:2% 2.5%;
+	    box-sizing:border-box;
+	    padding-bottom:0.2rem;
+	    border:solid 0.01rem #eee;
+	}
+	.cooperation_item img {
+	    margin: 0 auto;
+	    width:90%;
+	}
 }

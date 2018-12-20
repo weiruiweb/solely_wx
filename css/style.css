@@ -1623,7 +1623,7 @@ transition:all .6s ease-in-out;
     overflow: hidden;
     transition:all 1s;
     -webkit-transition:all 0.5s;
-    z-index:99;
+    z-index:999;
     box-shadow:0 0 10px #8dd5fc;
 }
 .qq_icon p{
@@ -1680,4 +1680,11 @@ transition:all .6s ease-in-out;
 .qrcode img{
     width:1rem;
     height:1rem;
+}
+.line_right{
+    position:absolute;
+    right:-20px;
+    width:40px;
+    height:100%;
+    background:transparent;
 }
