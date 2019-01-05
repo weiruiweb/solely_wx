@@ -1,6 +1,5 @@
 window.base={
     g_restUrl:'https://www.solelycloud.com/api/public/index.php/api/v1/',
-    g_restUrl1:'https://www.solelycloud.com/api/public/index.php/api/v1/Project/',
     getData:function(params){
         if(!params.type){
             params.type='get';
@@ -23,29 +22,6 @@ window.base={
             }
         });
     },
-    getData1:function(params){
-        if(!params.type){
-            params.type='get';
-        }
-        var that=this;
-        $.ajax({
-            type:params.type,
-            url:this.g_restUrl1+params.url,
-            data:params.data,
-            beforeSend: function (XMLHttpRequest) {
-                // if (params.tokenFlag) {
-                //     XMLHttpRequest.setRequestHeader('token', that.getLocalStorage('token'));
-                // }
-            },
-            success:function(res){
-                params.sCallback && params.sCallback(res);
-            },
-            error:function(res){
-                params.eCallback && params.eCallback(res);
-            }
-        });
-    },
-
     articleList:function(param,callback) {
   
         var allParams = {
@@ -72,14 +48,14 @@ window.base={
     },
     messageAdd:function(param,callback) {
         var allParams = {
-            url:'Solely/addMessage',
+            url:'Project/Solely/addMessage',
             type:'post',
             data:param,
             sCallback: function(data){
                 callback&&callback(data);
             }
         };
-        this.getData1(allParams)
+        this.getData(allParams)
     },
 
     findKeyFromArray:function(Array,key,value) {  
