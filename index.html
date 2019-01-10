@@ -22,14 +22,26 @@
 <script src="js/base.js" type="application/javascript"></script>
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 <script src="js/rem.js"></script>
-
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e2d70abcefc8cc25d47c423f0b16092e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 <!--[if IE 9]>
  <style>
     .animatedOpacity{
         opacity:1;
         }
     .sort_in{
-    margin-top:0.3rem;
+        margin-top:0.3rem;
+    }
+    .fadeInLeft{
+        opacity:1;
+        filter:alpha(opacity=100);
     }
  </style>
 <![endif]-->
@@ -59,7 +71,7 @@ var _hmt = _hmt || [];
                     <li><a href="index.html" class="active">首页</a></li>
                     <li><a href="case.html">行业案例</a></li>
                     <li><a href="customize.html">小程序定制</a></li>
-                    <li><a href="agent.html">加盟代理</a></li>
+                    <li><a href="agent.html">合作代理</a></li>
                     <li><a href="about.html">关于我们</a></li>
                 </ul>
              </div>
@@ -68,7 +80,7 @@ var _hmt = _hmt || [];
                     <li><a href="index.html" class="active">首页</a></li>
                     <li><a href="case.html">行业案例</a></li>
                     <li><a href="customize.html">小程序定制</a></li>
-                    <li><a href="agent.html">加盟代理</a></li>
+                    <li><a href="agent.html">合作代理</a></li>
                     <li><a href="about.html">关于我们</a></li>
                 </ul>
              </div>
@@ -539,7 +551,7 @@ var _hmt = _hmt || [];
 </script>
 <section class="footer" id="footer">
     <div class="contain footer_cont">
-        <div class="footer_left  hidden-xs">
+        <div class="footer_left  hidden-xs" style="overflow: hidden">
             <ul class="">
                 <li>服务领域</li>
                 <li>官网建设</li>
@@ -570,7 +582,7 @@ var _hmt = _hmt || [];
                 <li>站点地图</li>
             </ul>
         </div>
-        <div class="col-md-2 col-xs-12">
+        <div class="col-md-2 col-xs-12" style="overflow: hidden">
             <div class="col-md-12 col-xs-12 qrcode">
                 <p>官方微信</p>
                 <img src="images/qrcode.jpg" class="img-responsive">
@@ -579,6 +591,11 @@ var _hmt = _hmt || [];
         <div class="clear"></div>
         <div class="hotPhone col-md-12">
             <span>全国客服热线:18092651090</span><span>(周一至周日9:0-21:00）</span>
+        </div>
+        <div class="clear"></div>
+        <div class="sole_tech">
+            <span>版权所有:西安纯粹科技有限公司</span>
+            <span>技术支持:西安纯粹科技</span>
         </div>
     </div>
 </section>
